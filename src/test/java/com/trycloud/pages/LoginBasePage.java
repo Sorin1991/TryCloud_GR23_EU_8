@@ -32,7 +32,6 @@ public void loginToDashboardPage (){
     Driver.getDriver().get(ConfigurationReader.getProperty("TryCloud.url"));
     usernameBox.sendKeys(ConfigurationReader.getProperty("TryCloud.username"));
     passwordBox.sendKeys(ConfigurationReader.getProperty("TryCloud.password"));
-    loginButton.click();
-}
+    loginButton.click();}
 
 }
