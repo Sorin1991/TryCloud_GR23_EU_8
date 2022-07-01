@@ -17,8 +17,9 @@ import org.junit.runner.RunWith;
         glue = "com/trycloud/step_definitions",
         dryRun = false,
         tags = ""
-       // publish = true
+       // publish = true//sorin
 )
+
 
 public class TestRunner {
 }
