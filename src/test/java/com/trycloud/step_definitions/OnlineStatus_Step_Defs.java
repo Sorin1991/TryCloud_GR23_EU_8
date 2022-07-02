@@ -6,11 +6,16 @@ import com.trycloud.pages.OnlineStatusFieldPage;
 import com.trycloud.utilities.BUtility;
 import com.trycloud.utilities.ConfigurationReader;
 import com.trycloud.utilities.Driver;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.apache.commons.logging.Log;
 import org.junit.Assert;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import javax.swing.*;
 
 public class OnlineStatus_Step_Defs {
 
@@ -60,7 +65,21 @@ public class OnlineStatus_Step_Defs {
     public void userClickOnlineOption() {
 
         onlineStatusFieldPage.online.click();
+
     }
 
 
+    @And("User click close sign")
+    public void userClickCloseSign() {
+        Actions action = new Actions(Driver.getDriver());
+        action.moveToElement(onlineStatusFieldPage.setStatusMessageButton).click().perform();
+
+    }
+
+    @Then("User should see Online text in the Online Status field")
+    public void userShouldSeeOnlineTextInTheOnlineStatusField() {
+        String expectedText = "Online";
+        Assert.assertEquals(expectedText,homePage.onlineOptionTextInTheStatusField.getText());
+
+    }
 }

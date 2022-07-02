@@ -13,4 +13,6 @@ Feature: Online Status functionality
     Scenario: User should be able to change Online Status
       Given User is on the home page
       When User click Online Status field at the middle of the page
-      When User click Online option
+      And User click Online option
+      And User click close sign
+      Then User should see Online text in the Online Status field

@@ -23,6 +23,12 @@ public class OnlineStatusFieldPage {
     @FindBy(xpath = "(//div[@class='user-status-online-select'])[4]")
     public WebElement invisible;
 
+    @FindBy(xpath = "//span[@hidden='hidden']")
+    public  WebElement closeSign;
+
+    @FindBy(xpath = "//button[@class='status-buttons__primary primary']")
+    public WebElement setStatusMessageButton;
+
 
 
 }
