@@ -29,6 +29,43 @@ public class OnlineStatusFieldPage {
     @FindBy(xpath = "//button[@class='status-buttons__primary primary']")
     public WebElement setStatusMessageButton;
 
+    public WebElement getStatusOption(String option){
+        WebElement result;
+        if(option.equalsIgnoreCase("online")){
+            return online;
+        }else if(option.equalsIgnoreCase("away")){
+            return away;
+        }else if(option.equalsIgnoreCase("Invisible")){
+            return invisible;
+        }else{
+            return doNotDisturb;
+        }
+    }
+
+    @FindBy(xpath = "//label[@class='user-status-online-select__label icon-user-status-online']")
+    public WebElement onlineOptionTextInTheStatusField;
+
+    @FindBy(xpath = "//label[@class='user-status-online-select__label icon-user-status-away']")
+    public WebElement awayOptionTextInTheStatusField;
+
+    @FindBy(xpath = "//label[@class='user-status-online-select__label icon-user-status-invisible']")
+    public WebElement invisibleOptionTextInTheStatusField;
+
+    @FindBy(xpath = "//label[@class='user-status-online-select__label icon-user-status-dnd']")
+    public WebElement doNotDisturbOptionTextInTheStatusField;
+
+    private WebElement getDisplayedStatus(String option){
+        if(option.equalsIgnoreCase("Online")){
+            return onlineOptionTextInTheStatusField;
+        }else if(option.equalsIgnoreCase("Away")){
+            return awayOptionTextInTheStatusField;
+        }else if(option.equalsIgnoreCase("Invisible")){
+            return invisibleOptionTextInTheStatusField;
+        }else {
+            return doNotDisturbOptionTextInTheStatusField;
+        }
+    }
+
 
 
 }

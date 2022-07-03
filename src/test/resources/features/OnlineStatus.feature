@@ -10,9 +10,15 @@ Feature: Online Status functionality
     Then User see the Online Status pop-up window
 
     @wip
-    Scenario: User should be able to change Online Status
+    Scenario Outline: User should be able to change Online Status
       Given User is on the home page
       When User click Online Status field at the middle of the page
-      And User click Online option
+      And User click "<Options>" option
       And User click close sign
-      Then User should see Online text in the Online Status field
+      Then User should see "<Options>" text in the Online Status field
+      Examples:
+      |Options|
+      |Online|
+      |Away  |
+      |Invisible|
+      |Do not disturb|

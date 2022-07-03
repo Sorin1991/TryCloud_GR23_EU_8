@@ -12,7 +12,10 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.apache.commons.logging.Log;
 import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import javax.swing.*;
@@ -79,7 +82,21 @@ public class OnlineStatus_Step_Defs {
     @Then("User should see Online text in the Online Status field")
     public void userShouldSeeOnlineTextInTheOnlineStatusField() {
         String expectedText = "Online";
-        Assert.assertEquals(expectedText,homePage.onlineOptionTextInTheStatusField.getText());
+        Assert.assertEquals(expectedText,onlineStatusFieldPage.onlineOptionTextInTheStatusField.getText());
 
+    }
+
+
+
+    @And("User click {string} option")
+    public void userClickOption(String option) {
+        onlineStatusFieldPage.getStatusOption(option).click();
+    }
+
+    @Then("User should see {string} text in the Online Status field")
+    public void userShouldSeeTextInTheOnlineStatusField(String expectedText) {
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(),10);
+        wait.until(ExpectedConditions.visibilityOf(onlineStatusFieldPage.getStatusOption(expectedText)));
+        Assert.assertEquals(expectedText,onlineStatusFieldPage.getStatusOption(expectedText).getText());
     }
 }
