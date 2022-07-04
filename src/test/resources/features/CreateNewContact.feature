@@ -1,6 +1,6 @@
 Feature: Contacts Functionality - create new contact
 
-@test
+
   Scenario: User should be able to create a new contact
     Given user is on contacts page
     When user clicks + new contact button
