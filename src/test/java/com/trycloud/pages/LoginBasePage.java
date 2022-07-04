@@ -2,7 +2,6 @@ package com.trycloud.pages;
 
 import com.trycloud.utilities.ConfigurationReader;
 import com.trycloud.utilities.Driver;
-import io.cucumber.java.en.Given;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
