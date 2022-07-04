@@ -1,14 +1,12 @@
 package com.trycloud.step_definitions;
 
 import com.trycloud.pages.FilePage;
-import com.trycloud.pages.LoginBasePage;
-import com.trycloud.utilities.BUtility;
 import com.trycloud.utilities.Driver;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
-public class Files_page {
+public class Files_page_Step_Definitions {
 
     FilePage filePage = new FilePage();
 
