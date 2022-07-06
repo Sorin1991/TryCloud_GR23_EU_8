@@ -27,11 +27,33 @@ public class ContactsPage {
     @FindBy(id = "contact-fullname")
     public WebElement addFullName;
 
-    @FindBy(xpath = "/html/body/div[3]/main/div/div[2]/section/div[1]/div/div/input")
+    @FindBy(xpath = "//input[@inputmode='tel']")
     public WebElement addPhoneNumber;
 
-    @FindBy(xpath = "/html/body/div[3]/main/div/div[2]/section/div[2]/div/div/input")
+    @FindBy(xpath = "//input[@inputmode='email']")
     public WebElement addEmailAddress;
+
+
+    @FindBy(xpath = "//button[@class='icon action-item__menutoggle icon-picture-force-white']")
+    public WebElement uploadPictureIcon;
+
+    @FindBy(xpath = "//span[.='Upload a new picture']")
+    public WebElement uploadNewPictureButton;
+
+    @FindBy(xpath = "//span[.='Choose from Files']")
+    public WebElement chooseFromFilesButton;
+
+    @FindBy(xpath = "//span[.='Get from Gravatar']")
+    public WebElement getFromGravatarButton;
+
+    @FindBy(xpath = "//span[@title='Not grouped']")
+    public WebElement notGroupedButton;
+
+    @FindBy(id = "[id='contact-title']")
+    public WebElement contactTitleInputBox;
+
+
+
 
 
     public void SetContactInfo(){
