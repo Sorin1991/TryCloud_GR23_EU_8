@@ -54,7 +54,9 @@ public class OnlineStatusFieldPage {
     @FindBy(xpath = "//label[@class='user-status-online-select__label icon-user-status-dnd']")
     public WebElement doNotDisturbOptionTextInTheStatusField;
 
-    private WebElement getDisplayedStatus(String option){
+
+
+    public WebElement getDisplayedStatus(String option){
         if(option.equalsIgnoreCase("Online")){
             return onlineOptionTextInTheStatusField;
         }else if(option.equalsIgnoreCase("Away")){

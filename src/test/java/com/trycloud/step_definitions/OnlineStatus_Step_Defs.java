@@ -76,15 +76,16 @@ public class OnlineStatus_Step_Defs {
     public void userClickCloseSign() {
         Actions action = new Actions(Driver.getDriver());
         action.moveToElement(onlineStatusFieldPage.setStatusMessageButton).click().perform();
+        BUtility.waitFor(1);
 
     }
 
-    @Then("User should see Online text in the Online Status field")
+   /* @Then("User should see Online text in the Online Status field")
     public void userShouldSeeOnlineTextInTheOnlineStatusField() {
         String expectedText = "Online";
         Assert.assertEquals(expectedText,onlineStatusFieldPage.onlineOptionTextInTheStatusField.getText());
 
-    }
+    }*/
 
 
 
@@ -95,8 +96,8 @@ public class OnlineStatus_Step_Defs {
 
     @Then("User should see {string} text in the Online Status field")
     public void userShouldSeeTextInTheOnlineStatusField(String expectedText) {
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(),10);
-        wait.until(ExpectedConditions.visibilityOf(onlineStatusFieldPage.getStatusOption(expectedText)));
-        Assert.assertEquals(expectedText,onlineStatusFieldPage.getStatusOption(expectedText).getText());
+       //WebDriverWait wait = new WebDriverWait(Driver.getDriver(),10);
+      //wait.until(ExpectedConditions.visibilityOf(onlineStatusFieldPage.getDisplayedStatus(expectedText)));
+        Assert.assertEquals(expectedText,homePage.onlineStatusField.getText().trim());
     }
 }
