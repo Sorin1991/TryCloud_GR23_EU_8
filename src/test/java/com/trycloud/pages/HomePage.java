@@ -26,10 +26,7 @@ public class HomePage {
     @FindBy(xpath = "//button[@class='user-status-menu-item__toggle user-status-menu-item__toggle--inline']")
     public WebElement onlineStatusField;
 
-
-
-
-
-
+    @FindBy(id = "appmenu")
+    public WebElement topLeftIconMenu;
 
 }
