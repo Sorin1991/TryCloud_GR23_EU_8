@@ -27,12 +27,7 @@ public class NewContactsNadia_StepDefs {
         newContactNadia.newContactsButton.click();
 
     }
-    @Then("user enter full name")
-    public void user_enter_full_name() {
-        newContactNadia.contactsFullName.clear();
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 5000);
-        newContactNadia.contactsFullName.sendKeys(faker.name().fullName());
-    }
+
     @Then("user enters telephone number")
     public void user_enters_telephone_number() {
         newContactNadia.contactsTelephone.sendKeys(faker.phoneNumber().cellPhone());
@@ -43,8 +38,17 @@ public class NewContactsNadia_StepDefs {
         newContactNadia.contactsEmail.sendKeys(faker.internet().emailAddress());
     }
 
+    @Then("user enter full name")
+    public void user_enter_full_name() {
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 5000,5000);
+        newContactNadia.contactsFullName.sendKeys(faker.name().fullName());
+    }
+
+
     @Then("user should see new contacts name in the contacts list")
     public void user_should_see_new_contacts_name_in_the_contacts_list() {
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(),5000,5000);
+
         newContactNadia.newContactsButton.click();
         Assert.assertTrue(newContactNadia.contactsFullName.isDisplayed());
 
