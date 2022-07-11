@@ -11,10 +11,13 @@ public class NewContactNadia {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy (id="new-contact-button")
+    @FindBy (xpath = "//ul[@id='appmenu']//a[@aria-label='Contacts']")
+    public WebElement contactsPageIcon;
+
+    @FindBy (xpath = "//button[@id='new-contact-button']")
     public WebElement newContactsButton;
 
-    @FindBy (id="contact-fullname")
+    @FindBy (xpath = "//input[@id='contact-fullname']")
     public WebElement contactsFullName;
 
     @FindBy (xpath = "//input[@inputmode='tel']")
@@ -22,6 +25,9 @@ public class NewContactNadia {
 
     @FindBy (xpath = "//input[@inputmode='email']")
     public WebElement contactsEmail;
+
+    @FindBy (xpath = "//*[@id='contacts-list']")
+    public WebElement contactsList;
 
 
 }
