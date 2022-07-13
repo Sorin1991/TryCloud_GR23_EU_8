@@ -38,6 +38,7 @@ public class TalkPage {
     public WebElement seeingScreen;
 
 
+
     public void nameInformation(){
         Faker faker=new Faker();
         searchParticipant.sendKeys(faker.name().fullName());
