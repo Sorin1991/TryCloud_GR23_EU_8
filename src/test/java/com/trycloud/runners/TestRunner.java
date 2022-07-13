@@ -16,9 +16,9 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/trycloud/step_definitions",
         dryRun = false,
-        tags = "@CLOUD-541"
+        tags = "@regression"
+       // publish = true//sorin
 )
-
 
 public class TestRunner {
 }
