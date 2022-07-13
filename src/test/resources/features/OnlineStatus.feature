@@ -30,3 +30,20 @@ Feature: Online Status functionality
 			|Away  |
 			|Invisible|
 			|Do not disturb|
+
+	@CLOUD-541
+	Scenario Outline: Verify that user should be able to set a status message  by selecting ready messages
+
+		Given User is on the home page
+		When User click Online Status field at the middle of the page
+		And User click on "<Options>" status message option
+		And User click on Set status message button
+		Then User should see that "<Options>" message is  displayed at the Online Status field
+
+		Examples:
+		|Options|
+		|In a meeting|
+		|Commuting   |
+		|Working remotely|
+		|Out sick        |
+		|Vacationing     |

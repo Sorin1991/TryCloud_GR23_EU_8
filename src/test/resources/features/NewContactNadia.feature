@@ -1,6 +1,6 @@
 Feature: TryCloud contacts module.
 
-  @wip @CLOUD-525
+   @CLOUD-525
   Scenario: User should be able to create a new contact
     Given user is on contacts page
     Then user clicks on new contact button
