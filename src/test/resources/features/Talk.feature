@@ -1,6 +1,6 @@
 Feature:Talk Function
 
-  @wip
+
   Scenario: Talk Functionality Conversation
     Given Navigate to qa.trycloud.net
     When Verify the module is highlighted when hover over
