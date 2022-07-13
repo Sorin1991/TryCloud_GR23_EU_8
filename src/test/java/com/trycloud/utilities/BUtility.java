@@ -185,8 +185,6 @@ for given duration
         }
     }
 
-
-
     /**
      * Waits for the provided element to be visible on the page
      *

@@ -31,9 +31,6 @@ public class TalkPage {
     @FindBy(xpath="//button[@class='navigation__button navigation__button-right primary']")
     public WebElement createConversation;
 
-
-
-
     @FindBy(xpath="//button[@class='top-bar__button top-bar__button primary']")
     public WebElement startcall;
 
