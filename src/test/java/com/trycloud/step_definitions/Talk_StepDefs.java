@@ -16,6 +16,8 @@ import org.openqa.selenium.Keys;
 public class Talk_StepDefs {
     TalkPage talkPage = new TalkPage();
     LoginBasePage loginBasePage = new LoginBasePage();
+
+
     Faker faker = new Faker();
     BUtility utility = new BUtility();
     @Given("Navigate to qa.trycloud.net")
@@ -52,7 +54,7 @@ public class Talk_StepDefs {
     @And("Click start call button")
     public void click_start_call_button() throws InterruptedException {
         talkPage.startcall.click();
-        BUtility.waitFor(1);
+       BUtility.waitFor(1);
 
     }
 

@@ -179,11 +179,13 @@ for given duration
      */
     public static void waitFor(int seconds) {
         try {
-            Thread.sleep(seconds * 1000);
+            Thread.sleep(seconds * 3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
+
+
 
     /**
      * Waits for the provided element to be visible on the page
