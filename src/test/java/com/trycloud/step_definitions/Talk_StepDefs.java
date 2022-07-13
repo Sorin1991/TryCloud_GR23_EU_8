@@ -15,6 +15,8 @@ import org.openqa.selenium.Keys;
 
 public class Talk_StepDefs {
     TalkPage talkPage = new TalkPage();
+
+
     LoginBasePage loginBasePage = new LoginBasePage();
     Faker faker = new Faker();
     BUtility utility = new BUtility();
