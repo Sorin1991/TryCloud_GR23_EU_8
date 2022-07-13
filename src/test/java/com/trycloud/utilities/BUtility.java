@@ -179,7 +179,7 @@ for given duration
      */
     public static void waitFor(int seconds) {
         try {
-            Thread.sleep(seconds * 1000);
+            Thread.sleep(seconds * 3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
