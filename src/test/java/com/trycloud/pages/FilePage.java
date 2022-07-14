@@ -18,6 +18,12 @@ public class FilePage {
    // @FindBy(css = "#appmenu li[data-id='files'] a")
    // public WebElement elementLink;
 
+    @FindBy(xpath = "//a[@class='button new']")
+    public WebElement addButton;
+
+    @FindBy(xpath = "//label[@class='menuitem']")
+    public WebElement uploadFilesButton;
+
 
 
 }
