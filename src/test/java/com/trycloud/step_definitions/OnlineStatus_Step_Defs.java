@@ -60,8 +60,6 @@ public class OnlineStatus_Step_Defs {
         homePage.onlineStatusField.click();
 
 
-
-
     }
 
     @When("User click Online option")
@@ -100,4 +98,33 @@ public class OnlineStatus_Step_Defs {
       //wait.until(ExpectedConditions.visibilityOf(onlineStatusFieldPage.getDisplayedStatus(expectedText)));
         Assert.assertEquals(expectedText,homePage.onlineStatusField.getText().trim());
     }
+
+    @And("User click on {string} status message option")
+    public void userClickOnStatusMessageOption(String option) {
+        onlineStatusFieldPage.getReadyStatusMessageOption(option).click();
+
+    }
+
+
+    @And("User click on Set status message button")
+    public void userClickOnSetStatusMessageButton() {
+        Actions action = new Actions(Driver.getDriver());
+        action.moveToElement(onlineStatusFieldPage.setStatusMessageButton).click().perform();
+        BUtility.waitFor(1);
+
+
+    }
+
+
+    @Then("User should see that {string} message is  displayed at the Online Status field")
+    public void userShouldSeeThatMessageIsDisplayedAtTheOnlineStatusField(String message) {
+
+        String displayedMessage = Driver.getDriver().findElement(By.xpath("//button[@class='user-status-menu-item__toggle user-status-menu-item__toggle--inline']")).getText();
+
+        Assert.assertEquals(message,displayedMessage.substring(2).trim());
+
+
+    }
+
+
 }

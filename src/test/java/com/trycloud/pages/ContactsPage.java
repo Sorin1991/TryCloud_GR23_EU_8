@@ -2,9 +2,15 @@ package com.trycloud.pages;
 
 import com.github.javafaker.Faker;
 import com.trycloud.utilities.Driver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
+
+import java.security.cert.X509Certificate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ContactsPage {
 
@@ -21,7 +27,7 @@ public class ContactsPage {
     @FindBy(xpath = "//span[normalize-space(text()) = '+ New group']")
     public WebElement createNewGroupButton;
 
-    @FindBy(xpath = "//button[@aria-controls='menu-hxjdp']")
+    @FindBy(xpath = "/html/body/div[3]/div/ul/li[6]/div/div[2]/div/div/button")
     public WebElement groupOptionsButton;
 
     @FindBy(id = "contact-fullname")
@@ -52,16 +58,43 @@ public class ContactsPage {
     @FindBy(id = "[id='contact-title']")
     public WebElement contactTitleInputBox;
 
+    @FindBy(xpath = "//span[.='Add contacts']")
+    public WebElement addContactsBtn;
+
+    @FindBy (xpath = "//input[@class='entity-picker__search-input']")
+    public WebElement searchBarToAddContactInGroup;
+
+    @FindBy(xpath = "//button[@class='navigation__button-left']")
+    public WebElement CancelButton;
+
+    @FindBy(xpath = "//button[@class='navigation__button-right primary']")
+    public WebElement addToGroupButton;
+
+    @FindBy(xpath = "(//span[@class='user-bubble__title'])[1]")
+    public WebElement selectedContact;
+
+
+    @FindBy(xpath = "(//div[@class='app-content-list-item-line-one'])[2]")
+    public WebElement verifyContactInList;
 
 
 
 
-    public void SetContactInfo(){
-        Faker faker = new Faker();
 
-        addEmailAddress.sendKeys(faker.internet().emailAddress());
-        addPhoneNumber.sendKeys(faker.phoneNumber().cellPhone());
-    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
