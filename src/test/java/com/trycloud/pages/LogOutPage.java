@@ -5,11 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LogOutPage {
-
-    public LogOutPage(){
-        PageFactory.initElements(Driver.getDriver(), this);
-    }
+public class LogOutPage extends BasePage{
 
     @FindBy (xpath = "//div[@class='avatardiv avatardiv-shown']//img")
     public WebElement userImageIcon;

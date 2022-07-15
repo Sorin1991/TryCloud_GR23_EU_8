@@ -13,7 +13,7 @@ public class LogOutNadia_StepDefs {
     LogOutPage logoutPage = new LogOutPage();
 
 
-    @Given("user is  on the dashboard page")
+    @Given("user is on the dashboard page")
     public void userIsOnTheDashboardPage() {
         loginBasePage.loginToDashboardPage();
     }

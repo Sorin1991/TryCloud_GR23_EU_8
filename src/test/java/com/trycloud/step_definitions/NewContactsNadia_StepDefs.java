@@ -3,12 +3,16 @@ package com.trycloud.step_definitions;
 import com.github.javafaker.Faker;
 import com.trycloud.pages.LoginBasePage;
 import com.trycloud.pages.NewContactNadia;
+import com.trycloud.utilities.BUtility;
 import com.trycloud.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.concurrent.TimeUnit;
 
 public class NewContactsNadia_StepDefs {
 
@@ -27,30 +31,36 @@ public class NewContactsNadia_StepDefs {
         newContactNadia.newContactsButton.click();
 
     }
+    @Then("user enter full name")
+    public void user_enter_full_name() {
+        BUtility.waitFor(3);
+        newContactNadia.contactsFullName.clear();
+        Driver.getDriver().manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
+        newContactNadia.contactsFullName.sendKeys(faker.name().fullName());
+    }
 
     @Then("user enters telephone number")
     public void user_enters_telephone_number() {
         newContactNadia.contactsTelephone.sendKeys(faker.phoneNumber().cellPhone());
-
+        BUtility.waitFor(5);
+        newContactNadia.contactsTelephone.sendKeys(Keys.RETURN);
+        BUtility.waitFor(5);
     }
+
     @Then("user enters email address")
     public void user_enters_email_address() {
-        newContactNadia.contactsEmail.sendKeys(faker.internet().emailAddress());
-    }
+        newContactNadia.contactsEmail.sendKeys("email.email.com");
+        BUtility.waitFor(5);
+        newContactNadia.contactsEmail.sendKeys(Keys.RETURN);
 
-    @Then("user enter full name")
-    public void user_enter_full_name() {
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 5000,5000);
-        newContactNadia.contactsFullName.sendKeys(faker.name().fullName());
     }
-
 
     @Then("user should see new contacts name in the contacts list")
     public void user_should_see_new_contacts_name_in_the_contacts_list() {
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(),5000,5000);
-
-        newContactNadia.newContactsButton.click();
-        Assert.assertTrue(newContactNadia.contactsFullName.isDisplayed());
+        newContactNadia.contactsEmail.sendKeys(Keys.RETURN);
+        BUtility.waitFor(5);
+        newContactNadia.TitleSaveOption.click();
+            Assert.assertTrue(newContactNadia.contactsFullName.isDisplayed());
 
     }
 

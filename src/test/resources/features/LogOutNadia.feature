@@ -1,9 +1,9 @@
-Feature: TryCloud logout feature
+Feature: User access
 
-  @nadia
-  @CLOUD-513
-  Scenario: As a user, I should be able to log out
-    Given user is  on the dashboard page
+
+  @CLOUD-570
+  Scenario: When the user logs out they are shown a login prompt
+    Given user is on the dashboard page
     Then user is able to logout successfully
     And user is on the login profile page
 

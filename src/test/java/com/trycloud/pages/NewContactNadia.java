@@ -5,11 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class NewContactNadia {
+public class NewContactNadia extends BasePage {
 
-    public NewContactNadia(){
-        PageFactory.initElements(Driver.getDriver(), this);
-    }
+
 
     @FindBy (xpath = "//ul[@id='appmenu']//a[@aria-label='Contacts']")
     public WebElement contactsPageIcon;
@@ -28,6 +26,9 @@ public class NewContactNadia {
 
     @FindBy (xpath = "//*[@id='contacts-list']")
     public WebElement contactsList;
+
+    @FindBy (id = "contact-title")
+    public WebElement TitleSaveOption;
 
 
 }
