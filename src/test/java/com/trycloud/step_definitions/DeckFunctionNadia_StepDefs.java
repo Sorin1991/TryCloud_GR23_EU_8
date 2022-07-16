@@ -2,14 +2,9 @@ package com.trycloud.step_definitions;
 
 import com.trycloud.pages.DeckFunctionNadiaPage;
 import com.trycloud.pages.LoginBasePage;
-import com.trycloud.pages.NewContactNadia;
-import com.trycloud.utilities.BUtility;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
-import okhttp3.internal.cache.DiskLruCache;
-import org.openqa.selenium.Keys;
 
 public class DeckFunctionNadia_StepDefs {
 
