@@ -69,5 +69,40 @@ public class OnlineStatusFieldPage {
     }
 
 
+    @FindBy(xpath = "(//span[@class='predefined-status__message'])[1]")
+    public WebElement inAMeetingOption;
+
+    @FindBy(xpath = "(//span[@class='predefined-status__message'])[2]")
+    public WebElement commutingOption;
+
+
+    @FindBy(xpath = "(//span[@class='predefined-status__message'])[3]")
+    public WebElement workingRemotelyOption;
+
+
+    @FindBy(xpath = "(//span[@class='predefined-status__message'])[4]")
+    public WebElement outSickOption;
+
+    @FindBy(xpath = "(//span[@class='predefined-status__message'])[5]")
+    public WebElement vacationingOption;
+
+
+    public WebElement getReadyStatusMessageOption(String option){
+        if(option.equalsIgnoreCase("in a meeting")){
+            return inAMeetingOption;
+        }else if(option.equalsIgnoreCase("commuting")){
+            return commutingOption;
+        }else if(option.equalsIgnoreCase("working remotely")){
+            return workingRemotelyOption;
+        }else if(option.equalsIgnoreCase("out sick")){
+            return outSickOption;
+        }else {
+            return vacationingOption;
+        }
+    }
+
+
+
+
 
 }
