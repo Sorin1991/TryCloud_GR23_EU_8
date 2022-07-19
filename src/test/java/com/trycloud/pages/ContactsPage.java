@@ -77,6 +77,10 @@ public class ContactsPage {
     @FindBy(xpath = "(//div[@class='app-content-list-item-line-one'])[2]")
     public WebElement verifyContactInList;
 
+    @FindBy(xpath = "(//div[@class='app-content-list-item-line-one'])[5]")
+    public WebElement specificContactToEdit;
+
+
 
 
 
