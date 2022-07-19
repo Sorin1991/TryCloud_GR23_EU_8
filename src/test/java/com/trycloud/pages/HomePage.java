@@ -5,9 +5,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import java.nio.channels.WritableByteChannel;
+
+
 
 public class HomePage extends LoginBasePage {
+
+
+
 
     public HomePage(){
         PageFactory.initElements(Driver.getDriver(),this);
@@ -28,7 +32,12 @@ public class HomePage extends LoginBasePage {
     @FindBy(xpath = "//button[@class='user-status-menu-item__toggle user-status-menu-item__toggle--inline']")
     public WebElement onlineStatusField;
 
+
     @FindBy(xpath = "//a[@aria-label='Files']")
     public WebElement filesIcon;
+
+    @FindBy(id = "appmenu")
+    public WebElement topLeftIconMenu;
+
 
 }
