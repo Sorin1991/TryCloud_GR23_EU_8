@@ -1,6 +1,7 @@
 Feature:Talk Function
 
-  @wip
+
+  @regression
   Scenario: Talk Functionality Conversation
     Given Navigate to qa.trycloud.net
     When Click on talk module on the middle top navigation menu
