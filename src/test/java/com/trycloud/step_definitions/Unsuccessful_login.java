@@ -34,7 +34,8 @@ public class Unsuccessful_login {
 
         loginBasePage.passwordBox.sendKeys("Wrongpassword123");
     }
-
+//This is for the negative scenario where user enters wrong passowrd 6 times
+    //We can't really run it because it will block our computer for a while
     @Then("user should see the throttled up warning message")
     public void userShouldSeeTheThrottledUpWarningMessage() {
         BUtility.verifyElementDisplayed(loginBasePage.throttledWarningMsg);
