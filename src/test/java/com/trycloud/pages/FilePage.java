@@ -24,6 +24,12 @@ public class FilePage {
     @FindBy(xpath = "//label[@class='menuitem']")
     public WebElement uploadFilesButton;
 
+    @FindBy(xpath = "//input[@type='file']")
+    public WebElement uploadFileInput;
+
+    @FindBy(xpath = "//span[.='donkey']")
+    public WebElement uploadedFile;
+
 
 
 }

@@ -1,13 +1,15 @@
 Feature: Add files in TryCloud
 
+  Background:
+    Given User is on the Files page
+
+
   @Sorin
   Scenario: Add files function
-    Given User is on the home page
-    When user is definitely on the dashboard page
-    And user click on files tab
-    And user can see files page
-    And user click on add button
-    Then user can upload files
+    When user click on add button
+    And user click upload files option from dropDown
+    And user upload files
+    Then user can see uploaded file on the list
 
 
 
