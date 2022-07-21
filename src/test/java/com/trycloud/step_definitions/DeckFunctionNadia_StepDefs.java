@@ -39,7 +39,6 @@ public class DeckFunctionNadia_StepDefs {
         deckFunctionNadiaPage.confirmAddBoardButton.click();
     }
 
-
     @Then("user is able to edit an existing board")
     public void userIsAbleToEditAnExistingBoard() {
         deckFunctionNadiaPage.selectOptionsBoard.click();

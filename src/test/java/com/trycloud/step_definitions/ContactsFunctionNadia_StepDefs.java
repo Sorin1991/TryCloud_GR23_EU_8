@@ -70,7 +70,6 @@ public class ContactsFunctionNadia_StepDefs {
         BUtility.sleep(1);
         contactFunctionNadiaPage.clearSection.click();
 
-
     }
 
     @When("user clicks on + new group icon")
@@ -113,7 +112,6 @@ public class ContactsFunctionNadia_StepDefs {
     public void userEditsNameByAddingTestToTheEnd() {
         contactFunctionNadiaPage.contactsFullName.sendKeys(" test");
         BUtility.sleep(5);
-        BUtility.waitFor(5);
         contactFunctionNadiaPage.newContactsButton.click();
     }
 
