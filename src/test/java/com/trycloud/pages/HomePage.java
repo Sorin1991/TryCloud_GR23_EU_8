@@ -43,4 +43,8 @@ public class HomePage extends LoginBasePage {
     @FindBy(xpath = "//*[@id=\"appmenu\"]/li[2]/a")
     public WebElement fileIcon;
 
+
+    //<h2 data-v-d8d86ca2="">Good afternoon, Dakota1</h2>
+    @FindBy(xpath = "//div[@id=\"app-dashboard\"]/h2")
+    public WebElement WelcomeMessageWithUserSName;
 }
