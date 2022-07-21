@@ -7,7 +7,7 @@ Feature: Add files in TryCloud
   @Sorin
   Scenario: Add files function
     When user click on add button
-    And user click upload files option from dropDown
+    And user can see upload files option from dropDown
     And user upload files
     Then user can see uploaded file on the list
 

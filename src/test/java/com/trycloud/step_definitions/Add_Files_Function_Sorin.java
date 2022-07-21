@@ -31,8 +31,8 @@ public class Add_Files_Function_Sorin  {
     }
 
 
-    @When("user click upload files option from dropDown")
-    public void user_click_upload_files_option_from_drop_down() {
+    @When("user can see upload files option from dropDown")
+    public void user_can_see_upload_files_option_from_drop_down() {
 
         if(filePage.uploadFilesButton.isEnabled()&&filePage.uploadFilesButton.isDisplayed()){
             System.out.println("DropDown is enabled and visible");
