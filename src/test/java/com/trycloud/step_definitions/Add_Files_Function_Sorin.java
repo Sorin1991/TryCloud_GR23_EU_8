@@ -33,9 +33,13 @@ public class Add_Files_Function_Sorin  {
 
     @When("user click upload files option from dropDown")
     public void user_click_upload_files_option_from_drop_down() {
-        Assert.assertTrue(filePage.uploadFilesButton.isDisplayed());
 
-        BUtility.waitFor(1);
+        if(filePage.uploadFilesButton.isEnabled()&&filePage.uploadFilesButton.isDisplayed()){
+            System.out.println("DropDown is enabled and visible");
+        }else
+            System.out.println("DropDown is disabled and not visible");
+        Driver.getDriver().navigate().refresh();
+        BUtility.waitFor(2);
 
     }
     @When("user upload files")
@@ -68,6 +72,7 @@ public class Add_Files_Function_Sorin  {
 //        rb.keyPress(KeyEvent.VK_ENTER);
 //        rb.keyRelease(KeyEvent.VK_ENTER);
     }
+
 
     @Then("user can see uploaded file on the list")
     public void user_can_see_uploaded_file_on_the_list() {
