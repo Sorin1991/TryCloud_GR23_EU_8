@@ -12,13 +12,16 @@ import org.junit.runner.RunWith;
         "rerun:target/rerun.txt",
         "me.jvt.cucumber.report.PrettyReports:target/cucumber",
         "json:target/cucumber.json"
-},
+    },
         features = "src/test/resources/features",
         glue = "com/trycloud/step_definitions",
         dryRun = false,
-        tags = "@regression"
-       // publish = true//sorin
-)
+        tags = "",
+        snippets = CucumberOptions.SnippetType.CAMELCASE
+
+
+    )
+
 
 public class TestRunner {
-}
+    }
