@@ -36,8 +36,11 @@ public class ContactsPage {
     @FindBy(xpath = "//input[@inputmode='tel']")
     public WebElement addPhoneNumber;
 
-    @FindBy(xpath = "//input[@inputmode='email']")
+    @FindBy(xpath = "(//input[@type='text'])[8]")
     public WebElement addEmailAddress;
+
+    @FindBy(xpath = "/html/body/div[3]/main/div/div[2]/section/div[2]/div/div/a")
+    public WebElement oldEmailAddress;
 
 
     @FindBy(xpath = "//button[@class='icon action-item__menutoggle icon-picture-force-white']")
@@ -79,6 +82,10 @@ public class ContactsPage {
 
     @FindBy(xpath = "(//div[@class='app-content-list-item-line-one'])[5]")
     public WebElement specificContactToEdit;
+
+    @FindBy(xpath = "(//a[@target='_blank'])[1]")
+    public WebElement actualPhoneNumber;
+
 
 
 
