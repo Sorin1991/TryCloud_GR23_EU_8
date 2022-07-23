@@ -1,3 +1,4 @@
+
 Feature: User can change the folder view
   1- According to "Names" with alphabetical order and reverse_alphabetical order,
   2- According to "Size" from smaller to larger and from larger to smaller,
