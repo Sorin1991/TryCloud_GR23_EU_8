@@ -13,6 +13,7 @@ import io.cucumber.java.en.When;
 import org.apache.commons.logging.Log;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -29,6 +30,7 @@ public class OnlineStatus_Step_Defs {
 
     @Given("User is on the home page")
     public void user_is_on_the_home_page() {
+
         loginBasePage.loginToDashboardPage();
 
     }
@@ -122,6 +124,98 @@ public class OnlineStatus_Step_Defs {
         String displayedMessage = Driver.getDriver().findElement(By.xpath("//button[@class='user-status-menu-item__toggle user-status-menu-item__toggle--inline']")).getText();
 
         Assert.assertEquals(message,displayedMessage.substring(2).trim());
+
+
+    }
+
+    @When("User click on Status message input box")
+    public void user_click_on_status_message_input_box() {
+        onlineStatusFieldPage.statusMessageInputBox.click();
+        BUtility.waitFor(1);
+    }
+    @Then("User should see the placeholder message is displayed in the Status message box")
+    public void user_should_see_the_placeholder_message_is_displayed_in_the_status_message_box() {
+        Assert.assertTrue(onlineStatusFieldPage.placeHolderMessage.isDisplayed());
+    }
+    @When("User enters a status message that  has max thirty character")
+    public void user_enters_a_status_message_that_has_max_character() {
+
+        onlineStatusFieldPage.statusMessageInputBox.clear();
+        onlineStatusFieldPage.statusMessageInputBox.sendKeys("I am working on my user story!");
+        BUtility.waitFor(1);
+        Actions action = new Actions(Driver.getDriver());
+        action.moveToElement(onlineStatusFieldPage.setStatusMessageButton).click().perform();
+
+
+    }
+
+    @Then("User should see the message is displayed on the Online Status field.")
+    public void user_should_see_the_message_is_displayed_on_the_online_status_field() {
+        String expectedMessage = "I am working on my user story!";
+
+        Assert.assertEquals(expectedMessage,homePage.onlineStatusField.getText().trim());
+    }
+
+
+    @When("User enters a status message that  has  thirty one character")
+    public void userEntersAStatusMessageThatHasThirtyOneCharacter() {
+        onlineStatusFieldPage.statusMessageInputBox.clear();
+        onlineStatusFieldPage.statusMessageInputBox.sendKeys("I am working on my user story!!");
+        BUtility.waitFor(1);
+        Actions action = new Actions(Driver.getDriver());
+        action.moveToElement(onlineStatusFieldPage.setStatusMessageButton).click().perform();
+    }
+
+    @Then("User should see the error message under the status message box")
+    public void userShouldSeeTheErrorMessageUnderTheStatusMessageBox() {
+
+    }
+
+
+    @Then("User click Clear status message button and the message should be disappeared at the Online status field")
+    public void userClickClearStatusMessageButtonAndTheMessageShouldBeDisappearedAtTheOnlineStatusField() {
+
+        String resentMessage = homePage.onlineStatusField.getText().trim();
+
+        BUtility.waitFor(1);
+        Actions action = new Actions(Driver.getDriver());
+        action.moveToElement(onlineStatusFieldPage.clearStatusButton).click().perform();
+        BUtility.waitFor(1);
+        Assert.assertNotEquals(resentMessage,homePage.onlineStatusField.getText().trim());
+
+    }
+
+
+    @When("User click Clear status after input box")
+    public void user_click_clear_status_after_input_box() {
+        JavascriptExecutor js= (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("window.scrollBy(0,300)");
+        BUtility.waitFor(1);
+        Actions action = new Actions(Driver.getDriver());
+        action.moveToElement(onlineStatusFieldPage.clearStatusAfterBox).click().perform();
+        BUtility.waitFor(1);
+
+
+    }
+    @Then("User should see time slots dropdown")
+    public void user_should_see_time_slots_dropdown() {
+        Assert.assertTrue(onlineStatusFieldPage.timeSlotsDropdown.isDisplayed());
+
+    }
+    @When("User select an {string} from the dropdown")
+    public void user_select_an_from_the_dropdown(String string) {
+        Actions action = new Actions(Driver.getDriver());
+        action.moveToElement(onlineStatusFieldPage.selectATimeSlot(string)).click().perform();
+        BUtility.waitFor(1);
+
+
+    }
+    @Then("User should see {string} message in the clear status after box")
+    public void user_should_see_message_in_the_clear_status_after_box(String string) {
+
+        Assert.assertTrue(Driver.getDriver().findElement(By.xpath("//span[@class='multiselect__single']")).isDisplayed());
+
+        Assert.assertEquals(string,Driver.getDriver().findElement(By.xpath("//span[@class='multiselect__single']")).getText());
 
 
     }
