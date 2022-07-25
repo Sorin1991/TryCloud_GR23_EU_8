@@ -1,6 +1,7 @@
 package com.trycloud.pages;
 
 import com.trycloud.utilities.Driver;
+import org.joda.time.Minutes;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -98,6 +99,58 @@ public class OnlineStatusFieldPage {
             return outSickOption;
         }else {
             return vacationingOption;
+        }
+    }
+
+
+    @FindBy(xpath = "(//input[@type='text'])[1]")
+    public WebElement statusMessageInputBox;
+
+    @FindBy(xpath = "(//input[@type='text'])[1]")
+    public WebElement placeHolderMessage;
+
+
+    @FindBy(xpath = "//button[@class='status-buttons__select']")
+    public  WebElement clearStatusButton;
+
+    @FindBy(xpath = "//div[@class='multiselect__content-wrapper']")
+    public WebElement timeSlotsDropdown;
+
+    @FindBy(xpath = "//input[@class='multiselect__input']")
+    public WebElement clearStatusAfterBox;
+
+    //span[@class='multiselect__single']
+    @FindBy(xpath = "(//li[@class='multiselect__element'])[1]")
+    public WebElement dontClear;
+
+    @FindBy(xpath = "(//li[@class='multiselect__element'])[2]")
+    public WebElement thirtyMinutes;
+
+    @FindBy(xpath = "(//li[@class='multiselect__element'])[3]")
+    public WebElement oneHour;
+    @FindBy(xpath = "(//li[@class='multiselect__element'])[4]")
+    public WebElement fourHours;
+
+    @FindBy(xpath = "(//li[@class='multiselect__element'])[5]")
+    public WebElement today;
+
+    @FindBy(xpath = "(//li[@class='multiselect__element'])[6]")
+    public WebElement thisWeek;
+
+    public WebElement selectATimeSlot(String string){
+        if(string.equals("Don't clear")){
+            return dontClear;
+        }else if(string.equals("30 minutes")){
+            return thirtyMinutes;
+        }else if(string.equals("an hour")){
+            return oneHour;
+        } else if(string.equals("4 hours")){
+            return fourHours;
+
+        }else if(string.equals("Today")){
+            return today;
+        }else {
+            return thisWeek;
         }
     }
 
