@@ -40,4 +40,7 @@ public class HomePage extends LoginBasePage {
     public WebElement topLeftIconMenu;
 
 
+    @FindBy(xpath = "//*[@id=\"appmenu\"]/li[2]/a")
+    public WebElement fileIcon;
+
 }
