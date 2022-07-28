@@ -27,9 +27,9 @@ Feature: Contacts Functionality
 
 		Given user is on contacts page
 		When user clicks + new contact button
-		And user adds name to contact
-		And user adds email address
-		And user adds phone number
+		And user adds "{string}" to contact
+		And user adds "{string}" address
+		And user adds "{string}"
 		Then user should see new contacts name
 
 
@@ -37,7 +37,7 @@ Feature: Contacts Functionality
 	Scenario: User can edit any selected contact
 		Given user is on contacts page
 		When user clicks specific contact
-		And user changes the contacts email
+		And user changes the contacts "{string}"
 		Then user can verify if the contact is edited successfully
 
 
@@ -45,7 +45,7 @@ Feature: Contacts Functionality
 	Scenario: User can edit any selected contact
 		Given user is on contacts page
 		When user clicks specific contact
-		And user changes the contacts name
+		And user changes the contacts "{string}"
 		Then user can verify if the contact is edited successfully
 
 
@@ -53,7 +53,7 @@ Feature: Contacts Functionality
 	Scenario: User can edit any selected contact
 		Given user is on contacts page
 		When user clicks specific contact
-		And user changes the contacts phone number
+		And user changes the contacts phone "{string}"
 		Then user can verify if the contact is edited successfully
 
 

@@ -27,9 +27,9 @@ public class EditAnyContact_StepDef {
         contactsPage.specificContactToEdit.click();
     }
 
-    @When("user changes the contacts email")
-    public void user_changes_the_contacts_email() {
-        String newEmailAddress = "test@test.com";
+    @When("user changes the contacts {string}")
+    public void user_changes_the_contacts_email(String newEmailAddress) {
+        newEmailAddress = "test@test.com";
         BUtility.sleep(2);
         contactsPage.addEmailAddress.clear();
         BUtility.sleep(3);
@@ -42,13 +42,13 @@ public class EditAnyContact_StepDef {
         assertEquals(newEmailAddress, actualEmailAddress);
     }
 
-    @When("user changes the contacts name")
-    public void user_changes_the_contacts_name() {
+    @When("user changes the contacts {string}")
+    public void user_changes_the_contacts_name(String newName) {
 
 
 
         BUtility.sleep(1);
-        String newName = "Aysoltan Aysoltan";
+        newName = "Aysoltan Aysoltan";
         contactsPage.addFullName.clear();
         BUtility.sleep(3);
         contactsPage.addFullName.sendKeys(newName);
@@ -57,9 +57,9 @@ public class EditAnyContact_StepDef {
 
     }
 
-    @When("user changes the contacts phone number")
-    public void user_changes_the_contacts_phone_number() {
-        String newNumber = "9876543";
+    @When("user changes the contacts phone {string}")
+    public void user_changes_the_contacts_phone_number(String newNumber) {
+         newNumber = "+4412345678";
 
         Actions actions = new Actions(Driver.getDriver());
         actions.doubleClick(contactsPage.addPhoneNumber).perform();
@@ -72,17 +72,13 @@ public class EditAnyContact_StepDef {
         BUtility.sleep(3);
         assertEquals(newNumber, actualNumber);
 
-
-
-
-
     }
 
 
     @Then("user can verify if the contact is edited successfully")
     public void user_can_verify_if_the_contact_is_edited_successfully() {
 
-        // assertTrue(contactsPage.specificContactToEdit.isDisplayed());
+        assertTrue(contactsPage.specificContactToEdit.isDisplayed());
 
 
     }

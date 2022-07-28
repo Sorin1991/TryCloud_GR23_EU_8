@@ -30,27 +30,30 @@ public class Create_New_Contact_StepDefs {
     public void user_clicks_new_contact_button() {
        contactsPage.newContactButton.click();
     }
-    @And("user adds name to contact")
-    public void userAddsToContact() {
+    @And("user adds {string} to contact")
+    public void userAddsToContact(String name) {
+        name = "tester tester";
         contactsPage.addFullName.clear();
         BUtility.sleep(2);
-        contactsPage.addFullName.sendKeys("Test Tester");
+        contactsPage.addFullName.sendKeys(name);
         
     }
 
 
-    @And("user adds email address")
-    public void userAddsAddress() {
+    @And("user adds {string} address")
+    public void userAddsAddress(String emailAddress) {
+        emailAddress = "test@email.com";
         BUtility.sleep(2);
-        contactsPage.addEmailAddress.sendKeys("test@email.com");
+        contactsPage.addEmailAddress.sendKeys(emailAddress);
         
     }
 
 
-    @And("user adds phone number")
-    public void userAdds() {
+    @And("user adds {string}")
+    public void userAdds(String phoneNumber) {
+        phoneNumber = "+1233456789";
         BUtility.sleep(2);
-        contactsPage.addPhoneNumber.sendKeys("+1233456789");
+        contactsPage.addPhoneNumber.sendKeys(phoneNumber);
     }
 
 
@@ -58,6 +61,8 @@ public class Create_New_Contact_StepDefs {
     public void user_should_see_new_contacts_name() {
         BUtility.sleep(2);
         Assert.assertTrue(contactsPage.addFullName.isDisplayed());
+
+
     }
 
 
