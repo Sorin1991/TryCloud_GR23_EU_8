@@ -70,5 +70,10 @@ public class FilesPage_Cemal {
     @FindBy(xpath = "//button[.='Move']")
     public WebElement moveButton;
 
+    @FindBy (xpath = "//span[.='DeleteTestFile']")
+    public WebElement deleteTestFile;
+
+    @FindBy(xpath = "//li[@class='action-5']")
+    public WebElement deleteFileOption;
 
 }

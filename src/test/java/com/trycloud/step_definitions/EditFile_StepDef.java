@@ -7,8 +7,12 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.nio.file.Files;
+import java.util.List;
 
 public class EditFile_StepDef {
 
@@ -53,7 +57,35 @@ public class EditFile_StepDef {
         filesPage.choseTargetFolderButton.click();
         BUtility.sleep(1);
         filesPage.moveButton.click();
+    }
 
+    @When("User right clicks the file to be deleted")
+    public void user_right_clicks_the_file_to_be_deleted() {
 
+        BUtility.sleep(2);
+
+        actions.contextClick(filesPage.deleteTestFile).perform();
+
+        BUtility.sleep(2);
+    }
+
+    @When("User selects the Delete File option from the dropdown")
+    public void user_selects_the_delete_file_option_from_the_dropdown() {
+
+        filesPage.deleteFileOption.click();
+
+        BUtility.sleep(2);
+
+    }
+
+    @Then("User can see that the deleted file is not in the page anymore")
+    public void user_can_see_that_the_deleted_file_is_not_in_the_page_anymore() {
+
+        List<WebElement> allNamesFiles = filesPage.allNamesFiles;
+
+        for (WebElement each : allNamesFiles) {
+           // System.out.println(each.getText());
+            Assert.assertNotEquals("DeleteTestFile.docx", each.getText());
+        }
     }
 }
