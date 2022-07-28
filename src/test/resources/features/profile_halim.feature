@@ -3,8 +3,7 @@ Feature: Default
 	Background:
 		#@CLOUD-291
 		Scenario: Login with valid credentials
-		    Given the user login with valid credentials
-		
+		    Given User is on the home page
 
 	#US:
 	#AC:

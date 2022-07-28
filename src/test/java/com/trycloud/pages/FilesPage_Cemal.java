@@ -48,4 +48,27 @@ public class FilesPage_Cemal {
             @FindBy(xpath = "//tr[@data-type='file']//span[@class='nametext']")
     })
     public List<WebElement> allNamesFiles;
+
+    @FindBy (xpath = "//tr[@data-file='DragAndDropTargetFolder']")
+    public WebElement dragAndDropTargetFolder;
+
+    @FindBy (xpath = "//tr[@data-id='8293']")
+    public WebElement dragAndDropTestFile;
+
+    @FindBy(xpath = "//span[.='DragAndDropTestFile']")
+    public WebElement carriedFile;
+
+    @FindBy(xpath = "//label[@for = 'select-files-8293']")
+    public WebElement checkBox;
+
+    @FindBy(xpath= "//a[@class='menu-option option-movecopy']")
+    public WebElement moveOrCopyButton;
+
+    @FindBy(xpath = "//div[@class='crumb']")
+    public WebElement choseTargetFolderButton;
+
+    @FindBy(xpath = "//button[.='Move']")
+    public WebElement moveButton;
+
+
 }
