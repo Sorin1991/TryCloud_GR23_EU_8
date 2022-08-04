@@ -15,8 +15,8 @@ import org.junit.runner.RunWith;
 },
         features = "src/test/resources/features",
         glue = "com/trycloud/step_definitions",
-        dryRun = true,
-        tags = "@Sorin"
+        dryRun = false,
+        tags = ""
        // publish = true//sorin
 )
 
