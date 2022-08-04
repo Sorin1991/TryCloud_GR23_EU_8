@@ -4,7 +4,7 @@ Feature: Add files in TryCloud
     Given User is on the Files page
 
 
-  @Sorin
+  @CLOUD-598
   Scenario: Add files function
     When user click on add button
     And user can see upload files option from dropDown

@@ -1,6 +1,6 @@
 Feature: TryCloud login feature
 
-
+@smoke
   Scenario: Login as a user with valid credential
     Given user on TryCloud login page
     When user enter valid username
