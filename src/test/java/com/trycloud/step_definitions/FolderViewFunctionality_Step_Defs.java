@@ -58,7 +58,7 @@ public class FolderViewFunctionality_Step_Defs {
         List<String> allNamesDirectories2 = new ArrayList<>();
 
         for (WebElement each : allNamesDirectoriesB) {
-            allNamesDirectories2.add(each.getText().toLowerCase());
+          allNamesDirectories2.add(each.getText().toLowerCase());
         }
 
        //  System.out.println("allNamesDirectories2 = " + allNamesDirectories2);
@@ -82,8 +82,7 @@ public class FolderViewFunctionality_Step_Defs {
         List<String>allNamesFiles2 = new ArrayList<>();
 
         for (WebElement each : allNamesFilesB) {
-
-            allNamesFiles2.add(each.getText().toLowerCase());
+           allNamesFiles2.add(each.getText().toLowerCase());
         }
 
        // System.out.println("allNamesFiles2 = " + allNamesFiles2);
