@@ -9,5 +9,3 @@ Feature: Contacts Functionality - create new contact
     And user adds email address
     And user adds phone number
     Then user should see new contacts name
-
-
